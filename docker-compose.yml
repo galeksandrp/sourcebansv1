@@ -1,0 +1,13 @@
+version: '2'
+services:
+  sourcebans:
+    build: .
+    ports:
+    - "8080:80"
+    links:
+    - mysql
+  mysql:
+    image: mysql:5.6
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_DATABASE: sb
